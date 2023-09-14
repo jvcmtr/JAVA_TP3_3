@@ -19,15 +19,14 @@ public class Program {
             s = s.trim();
         }
 
-        String sigla = s.toUpperCase().replaceAll(" (E|(D(A|E|I|O|U))) ", " ");
-        String[] a = sigla.split(" ");
-        sigla = "";
-        for (String word : a) {
-            sigla += word.trim().charAt(0);
-        }
-        System.out.println("SIGLA : " + s);
-        System.out.println("\t" + sigla);
-        System.out.println("\n");
+        String sigla = s.toUpperCase()
+            .replaceAll(" (E|(D(A|E|I|O|U))) ", " ")
+            .replaceAll("\\B\\w", "")
+            .replaceAll(" ", "");
+
+        System.out.println("  SIGLA DE :\t" + s);
+        System.out.println("\t\t" + sigla);
+        System.out.println();
 
     }   
 }
